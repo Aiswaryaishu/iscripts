@@ -2,25 +2,288 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #0b0b0f;
+  --muted: #f5f5f5;
+  --border: #e8e8e8;
+  --primary: #e53935;
+  --primary-dark: #c62828;
+  --dark: #080b12;
 }
 
-@theme inline {
+@theme {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-primary: var(--primary);
+  --color-primary-dark: var(--primary-dark);
+  --color-dark: var(--dark);
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  --font-sans: var(--font-roboto), system-ui, -apple-system, sans-serif;
+  --font-display: var(--font-dm-serif-text), Georgia, "Times New Roman", serif;
+
+  --animate-float-slow: float-slow 8s ease-in-out infinite;
+  --animate-float-slow-reverse: float-slow-reverse 10s ease-in-out infinite;
+  --animate-pulse-glow: pulse-glow 3s ease-in-out infinite;
+  --animate-fade-up: fade-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  --animate-shimmer: shimmer 6s linear infinite;
+
+  @keyframes float-slow {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-12px) rotate(1deg); }
+  }
+  @keyframes float-slow-reverse {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(12px) rotate(-1deg); }
+  }
+  @keyframes pulse-glow {
+    0%, 100% { 
+      box-shadow: 0 0 10px rgba(229, 57, 53, 0.15);
+      border-color: rgba(229, 57, 53, 0.3);
+    }
+    50% { 
+      box-shadow: 0 0 25px rgba(229, 57, 53, 0.45);
+      border-color: rgba(229, 57, 53, 0.8);
+    }
+  }
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+html {
+  scroll-behavior: smooth;
 }
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-roboto), system-ui, -apple-system, sans-serif;
+  font-feature-settings: "liga" 1, "kern" 1;
+  text-rendering: geometricPrecision;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-dm-serif-text), Georgia, "Times New Roman", serif;
+  letter-spacing: -0.02em;
+}
+
+/* Glassmorphism card utilities */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-panel-light {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* Scrollbar customizations */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #080b12;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2a2c35;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}
+
+/* Aurora Background Scene Styling - Red Theme */
+:root {
+  --bg-color: #000000;
+  --light-color: #e53935;
+  --glow-color-1: rgba(229, 57, 53, 0.5);
+  --glow-color-2: rgba(198, 40, 40, 0.35);
+}
+
+.scene {
+  position: absolute;
+  inset: 0;
+  background-color: transparent;
+  overflow: hidden;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.floor {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 120px;
+  background: radial-gradient(ellipse at bottom, var(--glow-color-1), transparent 70%);
+  animation: floorGlow 8s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.main-column {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 300px;
+  transform: translateX(-50%);
+  background: radial-gradient(circle at center, var(--glow-color-2) 0%, transparent 60%);
+  opacity: 0.7;
+  filter: blur(20px);
+  animation: mainGlow 6s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+.light-stream-container {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.light-beam {
+  position: absolute;
+  bottom: 0;
+  height: 80%;
+  background: linear-gradient(to top, transparent, var(--light-color), transparent);
+  opacity: 0;
+  animation-name: rise, fade;
+  animation-timing-function: linear, ease-in-out;
+  animation-iteration-count: infinite, infinite;
+}
+
+@keyframes rise {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-120%);
+    opacity: 0;
+  }
+}
+
+@keyframes fade {
+  0%, 100% {
+    opacity: 0;
+  }
+  5%, 80% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes floorGlow {
+  0%, 100% {
+    transform: scale(0.95);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.9;
+  }
+}
+
+@keyframes mainGlow {
+  from {
+    opacity: 0.5;
+    filter: blur(30px);
+  }
+  to {
+    opacity: 0.8;
+    filter: blur(15px);
+  }
+}
+
+/* Vertical Laser connecting line animation */
+@keyframes laser-pulse-vertical {
+  0% {
+    top: 0;
+    height: 0%;
+    opacity: 0;
+  }
+  15% {
+    top: 0;
+    height: 35%;
+    opacity: 1;
+  }
+  80% {
+    top: 65%;
+    height: 35%;
+    opacity: 1;
+  }
+  100% {
+    top: 100%;
+    height: 0%;
+    opacity: 0;
+  }
+}
+
+.animate-laser-pulse {
+  position: absolute;
+  width: 2px;
+  background-color: var(--primary);
+  box-shadow: 0 0 10px var(--primary), 0 0 4px var(--primary);
+  animation: laser-pulse-vertical 2.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
+}
+
+/* Upward Laser connecting line animation */
+@keyframes laser-pulse-vertical-up {
+  0% {
+    bottom: 0;
+    height: 0%;
+    opacity: 0;
+  }
+  15% {
+    bottom: 0;
+    height: 35%;
+    opacity: 1;
+  }
+  80% {
+    bottom: 65%;
+    height: 35%;
+    opacity: 1;
+  }
+  100% {
+    bottom: 100%;
+    height: 0%;
+    opacity: 0;
+  }
+}
+
+.animate-laser-pulse-up {
+  position: absolute;
+  width: 2px;
+  background-color: var(--primary);
+  box-shadow: 0 0 10px var(--primary), 0 0 4px var(--primary);
+  animation: laser-pulse-vertical-up 2.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
+}
+
+
