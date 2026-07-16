@@ -43,7 +43,7 @@ export const PlatformsSection: React.FC = () => {
       <div className="max-w-7xl mx-auto px-6">
         {/* Section Header */}
         <div className="text-center max-w-xl mx-auto mb-12 animate-fade-up">
-          <h2 className="text-3xl md:text-5xl font-serif text-dark tracking-tight mt-3 uppercase">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold uppercase tracking-tight leading-[1.1] text-dark mt-3">
             Our Technology Platforms
           </h2>
           <p className="text-sm md:text-base text-foreground/60 mt-3 leading-relaxed font-medium">

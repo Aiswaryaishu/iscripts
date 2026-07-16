@@ -73,8 +73,9 @@ export const CustomizationSection: React.FC = () => {
       <div className="relative z-10 mx-auto max-w-7xl px-6">
         <div className="mb-12 flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
           <div className="max-w-xl">
-            <h2 className="text-3xl font-black leading-tight tracking-tight text-dark md:text-4xl lg:text-5xl">
-              What services we provide to our customers business
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold uppercase tracking-tight leading-[1.1] text-dark">
+              Services We Provide <br />
+              For Your Business
             </h2>
           </div>
 

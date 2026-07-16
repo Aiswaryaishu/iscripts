@@ -94,7 +94,7 @@ export const BenefitsSection: React.FC = () => {
           
           {/* LEFT COLUMN: Clickable Advantage Tabs and Info */}
           <div className="lg:col-span-5 flex flex-col items-start">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-black uppercase tracking-tight leading-[1.1] text-black mb-8 mt-3">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold uppercase tracking-tight leading-[1.1] text-black mb-8 mt-3">
               Use iScripts Today And Launch Fast
             </h2>
 

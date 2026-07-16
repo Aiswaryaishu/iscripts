@@ -17,7 +17,7 @@ export const TeamSection: React.FC = () => {
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* Section Header */}
         <div className="text-center max-w-xl mx-auto mb-12">
-          <h2 className="text-3xl md:text-5xl font-black text-dark tracking-tight mt-3 uppercase">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold uppercase tracking-tight leading-[1.1] text-dark mt-3">
             Platform Capabilities
           </h2>
           <p className="text-sm md:text-base text-foreground/65 mt-4 leading-relaxed font-medium max-w-lg mx-auto">

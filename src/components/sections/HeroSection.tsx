@@ -75,20 +75,11 @@ export const HeroSection: React.FC = () => {
             
 
 
-            {/* Top Eyebrow Badge */}
-            <div className="relative z-10 inline-flex items-center gap-2.5 text-[#e53935] text-[10px] font-black uppercase tracking-[0.22em] mb-6 animate-fade-up select-none">
-              <span>Ideas</span>
-              <span className="w-1 h-1 rounded-full bg-[#e53935]/35" />
-              <span>Platforms</span>
-              <span className="w-1 h-1 rounded-full bg-[#e53935]/35" />
-              <span>Impact</span>
-            </div>
-
             {/* Elegant Bold Serif Title with Shimmer animations */}
-            <h1 className="relative z-10 text-4xl md:text-5xl lg:text-[54px] font-serif tracking-tight leading-[1.05] mb-3 animate-fade-up text-left">
-              <span className="text-[#0f172a] font-normal">DIGITAL PRODUCT</span>
+            <h1 className="relative z-10 text-4xl md:text-6xl lg:text-[68px] font-serif font-light tracking-tight leading-[1.05] mb-3 animate-fade-up text-left">
+              <span className="text-[#0f172a] font-light">DIGITAL PRODUCT</span>
               <br />
-              <span className="text-[#e53935] font-normal">DEVELOPMENT</span>
+              <span className="text-[#e53935] font-light">DEVELOPMENT</span>
             </h1>
 
             {/* Horizontal HUD Line */}
@@ -107,45 +98,39 @@ export const HeroSection: React.FC = () => {
             </div>
 
             {/* Three-Column Feature Grid */}
-            <div className="relative z-10 grid grid-cols-3 gap-2 border-t border-b border-slate-100 py-6 mb-8 w-full max-w-xl animate-fade-up [animation-delay:150ms]">
+            <div className="relative z-10 grid grid-cols-3 gap-3 sm:gap-4 py-4 mb-8 w-full max-w-xl animate-fade-up [animation-delay:150ms]">
               {/* Col 1 */}
-              <div className="flex items-center gap-3">
-                <div className="flex-shrink-0 w-9 h-9 rounded-lg bg-[#e53935]/5 border border-[#e53935]/10 flex items-center justify-center">
-                  <Rocket className="w-4 h-4 text-[#e53935]" />
+              <div className="group relative flex flex-col md:flex-row items-center md:items-start gap-3 p-3.5 rounded-2xl bg-slate-50/50 backdrop-blur-sm border border-slate-100/70 hover:bg-white hover:border-slate-200/80 hover:-translate-y-1 hover:shadow-[0_12px_24px_rgba(0,0,0,0.03)] transition-all duration-300 cursor-pointer">
+                <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-[#e53935]/5 border border-[#e53935]/10 flex items-center justify-center text-[#e53935] group-hover:bg-[#e53935] group-hover:text-white transition-all duration-300">
+                  <Rocket className="w-5 h-5 transition-transform duration-300 group-hover:scale-110" />
                 </div>
-                <div className="text-left">
-                  <div className="text-[11.5px] font-extrabold text-[#0f172a] leading-tight">Ready-to-launch</div>
-                  <div className="text-[10.5px] font-semibold text-slate-400">platforms</div>
+                <div className="text-center md:text-left">
+                  <div className="text-[12.5px] font-bold text-[#0f172a] leading-tight group-hover:text-[#e53935] transition-colors duration-300">Ready-to-launch</div>
+                  <div className="text-[11px] font-semibold text-slate-400 mt-0.5">platforms</div>
                 </div>
               </div>
-              
-              {/* Divider 1 */}
-              <div className="absolute left-[33%] top-5 bottom-5 w-[1px] bg-gradient-to-b from-transparent via-[#e53935]/25 to-transparent" />
 
               {/* Col 2 */}
-              <div className="flex items-center gap-3 pl-4">
-                <div className="flex-shrink-0 w-9 h-9 rounded-lg bg-[#e53935]/5 border border-[#e53935]/10 flex items-center justify-center">
-                  <svg className="w-4 h-4 text-[#e53935]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+              <div className="group relative flex flex-col md:flex-row items-center md:items-start gap-3 p-3.5 rounded-2xl bg-slate-50/50 backdrop-blur-sm border border-slate-100/70 hover:bg-white hover:border-slate-200/80 hover:-translate-y-1 hover:shadow-[0_12px_24px_rgba(0,0,0,0.03)] transition-all duration-300 cursor-pointer">
+                <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-[#e53935]/5 border border-[#e53935]/10 flex items-center justify-center text-[#e53935] group-hover:bg-[#e53935] group-hover:text-white transition-all duration-300">
+                  <svg className="w-5 h-5 transition-transform duration-300 group-hover:scale-110" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
                   </svg>
                 </div>
-                <div className="text-left">
-                  <div className="text-[11.5px] font-extrabold text-[#0f172a] leading-tight">Custom</div>
-                  <div className="text-[10.5px] font-semibold text-slate-400">development</div>
+                <div className="text-center md:text-left">
+                  <div className="text-[12.5px] font-bold text-[#0f172a] leading-tight group-hover:text-[#e53935] transition-colors duration-300">Custom</div>
+                  <div className="text-[11px] font-semibold text-slate-400 mt-0.5">development</div>
                 </div>
               </div>
-              
-              {/* Divider 2 */}
-              <div className="absolute left-[66%] top-5 bottom-5 w-[1px] bg-gradient-to-b from-transparent via-[#e53935]/25 to-transparent" />
 
               {/* Col 3 */}
-              <div className="flex items-center gap-3 pl-6">
-                <div className="flex-shrink-0 w-9 h-9 rounded-lg bg-[#e53935]/5 border border-[#e53935]/10 flex items-center justify-center">
-                  <Layers className="w-4 h-4 text-[#e53935]" />
+              <div className="group relative flex flex-col md:flex-row items-center md:items-start gap-3 p-3.5 rounded-2xl bg-slate-50/50 backdrop-blur-sm border border-slate-100/70 hover:bg-white hover:border-slate-200/80 hover:-translate-y-1 hover:shadow-[0_12px_24px_rgba(0,0,0,0.03)] transition-all duration-300 cursor-pointer">
+                <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-[#e53935]/5 border border-[#e53935]/10 flex items-center justify-center text-[#e53935] group-hover:bg-[#e53935] group-hover:text-white transition-all duration-300">
+                  <Layers className="w-5 h-5 transition-transform duration-300 group-hover:scale-110" />
                 </div>
-                <div className="text-left">
-                  <div className="text-[11.5px] font-extrabold text-[#0f172a] leading-tight">Scalable</div>
-                  <div className="text-[10.5px] font-semibold text-slate-400">architecture</div>
+                <div className="text-center md:text-left">
+                  <div className="text-[12.5px] font-bold text-[#0f172a] leading-tight group-hover:text-[#e53935] transition-colors duration-300">Scalable</div>
+                  <div className="text-[11px] font-semibold text-slate-400 mt-0.5">architecture</div>
                 </div>
               </div>
             </div>

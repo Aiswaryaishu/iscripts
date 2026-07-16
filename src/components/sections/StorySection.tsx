@@ -31,8 +31,9 @@ export const StorySection: React.FC = () => {
 
           {/* RIGHT COLUMN: Copy and Mission details */}
           <div className="lg:col-span-5 flex flex-col items-start">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-black uppercase tracking-tight leading-[1.1] text-white mb-6">
-              Ready-to-Go Platforms Start and Scale Faster
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold uppercase tracking-tight leading-[1.1] text-white mb-6">
+              Ready-to-Go Platforms <br />
+              Start Faster
             </h2>
 
             <div className="space-y-6 text-sm md:text-base text-white/70 leading-relaxed font-medium mb-8">
